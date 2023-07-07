@@ -5,7 +5,9 @@ arguments
     options.beta = 14
 end
 % Initialization
+    [n, m] = size(D);
     % normalize data
-    
+    D = normalize(D, 2, 'center');
+    D = D./sqrt((max(abs(D*D'./m), [], 'all')));
 end
 
