@@ -17,7 +17,7 @@ end
     D = D./sqrt((max(abs(D*D'./m), [], 'all')));
 
 % Solving Structure Learning with CVX
-    cvx_begin
+    cvx_begin quiet
         variable Del(n, n) semidefinite;
         variable W(n, n) symmetric;
         variable s nonnegative;
